@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Mootools Scrollmenu</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript" src="http://mootools.net/download/get/mootools-core-1.4.0-full-nocompat-yc.js"></script>
+	<script type="text/javascript" src="js/scrollmenu.js"></script>
+</head>
+<body>
+	<div id="example_1">
+		<div>
+			In interdum, justo lobortis mattis tempus, erat quam blandit elit, 
+		</div>
+		<div>
+			In interdum, justo lobortis mattis tempus, erat quam blandit elit, 
+		</div>
+		<div>
+			In interdum, justo lobortis mattis tempus, erat quam blandit elit, 
+		</div>
+		<div>
+			In interdum, justo lobortis mattis tempus, erat quam blandit elit, 
+		</div>
+		<div>
+			In interdum, justo lobortis mattis tempus, erat quam blandit elit,
+		</div>
+		<div>
+			In interdum, justo lobortis mattis tempus, erat quam blandit elit, 
+		</div>
+	</div>
+	<ul id="example_2">
+		<li>In interdum, justo lobortis mattis tempus, erat quam blandit elit</li>
+		<li>In interdum, justo lobortis mattis tempus, erat quam blandit elit</li>
+		<li>In interdum, justo lobortis mattis tempus, erat quam blandit elit</li>
+		<li>In interdum, justo lobortis mattis tempus, erat quam blandit elit</li>
+		<li>In interdum, justo lobortis mattis tempus, erat quam blandit elit</li>
+		<li>In interdum, justo lobortis mattis tempus, erat quam blandit elit</li>
+		<li>In interdum, justo lobortis mattis tempus, erat quam blandit elit</li>
+		<li>In interdum, justo lobortis mattis tempus, erat quam blandit elit</li>
+	</ul>
+</body>
+<script type="text/javascript">
+
+	(function() {
+		$('example_1').scrollmenu({});
+		$('example_2').scrollmenu({elements_per_scroll: 1, elements_per_page: 5, width: 500});
+	})();
+
+</script>
+</html>

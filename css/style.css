@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+
+.scrollmenu {
+	margin-left: 100px;
+	margin-top: 50px;
+	border: 1px solid #888;
+	position: relative;
+}
+.scrollmenu_list_wrapper {
+	overflow: hidden;
+	position: relative;
+}
+.scrollmenu_list_wrapper > * {
+	position: absolute;
+}
+.scrollmenu_list {
+
+}
+.scrollmenu_list > * {
+	float: left;
+	display: block;
+	border-left: 1px solid #f00;
+}
+.scrollmenu_menu .move_left, .scrollmenu_menu .move_right {
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	bottom: 10px;
+	background-color: #f00;
+	cursor: pointer;
+}
+.scrollmenu_menu .disable {
+	background-color: #ccc;
+}
+.scrollmenu_menu .move_left {
+	left: -10px;
+	
+}
+.scrollmenu_menu .move_right {
+	right: -10px;
+}
+
+#example_2, #example_2 li{
+	padding: 0px;
+	margin: 0px;
+}

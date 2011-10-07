@@ -254,7 +254,7 @@ Element.implement('getLayout', function() {
 		{
 			return false;
 		}
-		if (type != 'left' && type != 'top' && type != 'right' && type != 'bottom')
+		if (!(['left', 'top', 'right', 'bottom'].contains(type)))
 		{
 			return false;
 		}

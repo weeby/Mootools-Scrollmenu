@@ -115,7 +115,6 @@ var Scrollmenu = new Class({
 		else {
 			target_element = this.current + move;
 		}
-		console.log(this.current, target_element);
 		this._animateMove(target_element);
 	},
 	
@@ -212,7 +211,23 @@ var Scrollmenu = new Class({
 		// Render arrow menu
 		this._renderMenu();
 		
-	} 
+	},
+	
+	/**
+	 * Unset wrappers and added styles
+	 */
+	destroy: function()
+	{
+		this._element.setStyle('margin-left', 0);
+		this._element.removeClass(this.options.list_css_class);
+		this._element.inject(this._wrapper, 'before');
+		this._menu.dispose();
+		this._menu = null;
+		this._list_wrapper.dispose();
+		this._list_wrapper = null;
+		this._wrapper.dispose();
+		this._wrapper = null;
+	}
 	
 });
 

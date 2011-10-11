@@ -77,14 +77,14 @@ var Scrollmenu = new Class({
 		{
 			this.options.element_width = Math.round(this.options.width / this.options.elements_per_page);	
 		}
-		
+
 		this._items.each(function(item) {
 		
-			extra_sizes = item.getLayout();
-		
+			var computedSize = item.getComputedSize();
+			
 			item.setStyles({
-				'width': self.options.element_width - extra_sizes.layout_horizontal,
-				'height': self.options.height - extra_sizes.layout_vertical
+				'width': self.options.element_width - (computedSize.computedRight + computedSize.computedLeft),
+				'height': self.options.height - (computedSize.computedTop + computedSize.computedBottom)
 			});
 		});
 	},
@@ -255,39 +255,3 @@ Element.implement('scrollmenu', function(){
 	return this;
 });
 
-/**
- * Standard Mootools Elements extension
- * add new mathod called getLayout who return layout sizes 
- * @return Object
- */
-Element.implement('getLayout', function() {
-	
-	function getLayoutDimensions(element, type)
-	{
-	
-		if (!element)
-		{
-			return false;
-		}
-		if (!(['left', 'top', 'right', 'bottom'].contains(type)))
-		{
-			return false;
-		}
-		return parseInt(element.getStyle('padding-'+type), 10) + parseInt(element.getStyle('margin-'+type), 10) + parseInt(element.getStyle('border-'+type+'-width'), 10);
-	}
-	
-	var sizes = {
-		'width': parseInt(this.getStyle('width'), 10),
-		'height': parseInt(this.getStyle('height'),10),
-		'layout_left': getLayoutDimensions(this, 'left'),
-		'layout_right': getLayoutDimensions(this, 'right'),
-		'layout_top': getLayoutDimensions(this, 'top'),
-		'layout_bottom': getLayoutDimensions(this, 'bottom')
-	}
-	
-	sizes.layout_vertical = sizes.layout_top + sizes.layout_bottom;
-	sizes.layout_horizontal = sizes.layout_left + sizes.layout_right;
-	
-	return sizes;
-	
-});
